@@ -1,0 +1,294 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default (Light Mode) Styles */
+:root {
+    --background-color: #ffffff; /* Light background */
+    --text-color: #000000; /* Dark text */
+    --link-color: #f43a09; /* Bright Orange */
+    --button-background: #f43a09;
+    --button-hover: #333;
+    --box-shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
+    --header-background: #ffffff;
+    --footer-background: #333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --background-color: #121212; /* Dark background */
+    --text-color: #ffffff; /* Light text */
+    --link-color: #ffb766; /* Grandpa Orange */
+    --button-background: #333;
+    --button-hover: #f43a09; /* Bright Orange for dark mode */
+    --box-shadow-color: rgba(255, 255, 255, 0.1); /* Light shadow for dark mode */
+    --header-background: #333;
+    --footer-background: #121212;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0 10px;
+}
+
+p, h1, h2, h3 {
+    color: inherit; /* Inherit default color */
+}
+
+h2 {
+    color: var(--link-color); /* Grandpa Orange */
+}
+
+h3 {
+    color: #68d388; /* Live Green */
+}
+
+/* Header */
+header {
+    background: var(--header-background); /* Dynamic background */
+    color: inherit; /* Inherit default text color */
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #f43a09; /* Border for header */
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: inherit; /* Inherit default text color */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+    color: var(--link-color); /* Brightly Orange Number 2 */
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 50px 0;
+    background: var(--header-background); /* White background */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#hero h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#hero a {
+    text-decoration: none;
+    background-color: var(--button-background); /* Brightly Orange Number 2 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+#hero a:hover {
+    background-color: var(--button-hover); /* Darken on hover */
+}
+
+/* Layout for Technical Skills and Projects */
+#technical-projects {
+    display: flex; /* Ensure flex layout for a row */
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 40px 10px;
+}
+
+#technical-skills, #projects {
+    flex: 1; /* Allow it to take up available space */
+    border: 1px solid var(--link-color); /* Orange border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0px 4px 6px var(--box-shadow-color); /* Add shadow */
+    max-width: 45%; /* Limit the width */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    #technical-projects {
+        flex-direction: column; /* Stack the columns on smaller screens */
+        gap: 20px;
+    }
+
+    #technical-skills, #projects {
+        max-width: 100%; /* Make both sections full-width */
+        flex: none; /* Remove the flex growth */
+    }
+}
+
+/* Skill Category */
+.skill-category {
+    margin-bottom: 40px;
+}
+
+.skill-category h3 {
+    font-size: 1.8rem;
+    color: inherit;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Projects Section */
+#projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: inherit; /* Inherit default color */
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.flip-box {
+    background-color: var(--header-background);
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+    border: 2px solid var(--link-color); /* Add border */
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-box-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.flip-box-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 10px;
+}
+
+.flip-box-back h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.flip-box-back p {
+    font-size: 1em;
+}
+
+/* Certifications, Patents, Publications */
+ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact Form */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#contact input, #contact textarea {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+#contact button {
+    width: 40%;
+    padding: 10px;
+    background-color: var(--button-background);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: var(--button-hover);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--footer-background);
+    color: white;
+    border-top: 2px solid var(--link-color); /* Add border to footer */
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    #technical-projects {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #technical-skills, #projects {
+        max-width: 100%;
+        flex: none; /* Remove the flex growth */
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    #hero h2 {
+        font-size: 1.8em;
+    }
+}
