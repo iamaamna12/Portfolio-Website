@@ -70,6 +70,54 @@ h1, h2 {
   }
 }
 
+/* Basic Styling */
+#skills {
+  text-align: center;
+}
+
+.skill-block {
+  display: inline-block;
+  width: 200px;
+  height: 150px;
+  background-color: #333;
+  color: white;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(-100px); /* Start off-screen */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.skill-block h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.skill-block p {
+  display: none; /* Hide details initially */
+  margin-top: 10px;
+}
+
+.skill-block:hover {
+  transform: scale(1.05);
+  background-color: #f7931e; /* Highlight color on hover */
+}
+
+.skill-block:hover p {
+  display: block; /* Show details on hover */
+}
+
+/* Hover effect for skill blocks */
+.skill-block:hover {
+  background-color: #5D9F7E;
+  color: white;
+}
+
 
 
 
