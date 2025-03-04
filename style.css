@@ -49,11 +49,6 @@ h1, h2 {
   z-index: 1;  /* Ensure it's on top of other content */
 }
 
-/* Initially Hide Other Sections */
-section:not(.hero) {
-  display: none; /* Hide other sections initially */
-}
-
 
 #profession {
   font-size: 5vw; /* Slightly smaller font size for profession */
