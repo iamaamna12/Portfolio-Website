@@ -35,7 +35,7 @@ h1, h2 {
 /* Full Screen Name and Profession Section */
 #name, #profession {
   font-family: "Rock Salt", cursive;
-  font-size: 10vw;  /* Responsive font size */
+  font-size: 10vw;  /* Smaller for larger screens */
   color: var(--text-color);
   text-align: center;
   margin: 0;
@@ -43,47 +43,35 @@ h1, h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  line-height: 1.2;
 }
 
 #profession {
-  font-size: 5vw; /* Slightly smaller font size for the profession */
-  margin-top: 20px;
+  font-size: 5vw; /* Slightly smaller font size for profession */
+  margin-top: 10px;
 }
 
-/* Ensure full-screen layout */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Media Queries for Mobile and Tablet */
+/* Adjust for small screen sizes */
 @media (max-width: 768px) {
   #name {
-    font-size: 15vw; /* Adjust for smaller screens */
+    font-size: 15vw; /* Adjust for medium screens */
   }
   #profession {
-    font-size: 8vw;
+    font-size: 8vw; /* Adjust for medium screens */
   }
 }
 
 @media (max-width: 480px) {
   #name {
-    font-size: 20vw; /* Further adjust for mobile screens */
+    font-size: 18vw; /* Adjust for small mobile screens */
   }
   #profession {
-    font-size: 10vw;
+    font-size: 10vw; /* Adjust for small mobile screens */
   }
 }
+
+
+
 
 
 
