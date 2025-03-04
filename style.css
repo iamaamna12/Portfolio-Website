@@ -17,6 +17,10 @@ body {
   padding: 0 20px;
 }
 
+#hero {
+  padding: 70%;
+}
+
 h1, h2 {
   font-family: "Bangers", sans-serif; 
   color: var(--primary-color);
