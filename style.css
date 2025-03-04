@@ -2,9 +2,9 @@
 :root {
   --bg-color: #2e2e2e; /* Dark background */
   --text-color: #f1f1f1; /* Light text for contrast */
-  --primary-color: #f7931e; /* Bright orange (neon-like) accent */
+  --primary-color: #ffffff; /* Bright orange (neon-like) accent */
   --hover-color: #ff4081; /* Bright pink for hover effect */
-  --header-bg: #1a1a1a; /* Dark header background */
+  --header-bg: #1a0928; /* Dark header background */
   --header-text: #f1f1f1; /* Light header text */
 }
 
@@ -31,9 +31,59 @@ h1, h2 {
   text-shadow: 0 0 15px var(--hover-color);
 }
 
+
+/* Full Screen Name and Profession Section */
 #name, #profession {
   font-family: "Rock Salt", cursive;
-  font-size: 500px;
+  font-size: 10vw;  /* Responsive font size */
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+#profession {
+  font-size: 5vw; /* Slightly smaller font size for the profession */
+  margin-top: 20px;
+}
+
+/* Ensure full-screen layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+  #name {
+    font-size: 15vw; /* Adjust for smaller screens */
+  }
+  #profession {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 480px) {
+  #name {
+    font-size: 20vw; /* Further adjust for mobile screens */
+  }
+  #profession {
+    font-size: 10vw;
+  }
+}
+
 
 
