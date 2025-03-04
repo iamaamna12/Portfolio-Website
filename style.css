@@ -17,9 +17,6 @@ body {
   padding: 0 20px;
 }
 
-#hero {
-  padding: 70%;
-}
 
 h1, h2 {
   font-family: "Bangers", sans-serif; 
@@ -37,9 +34,10 @@ h1, h2 {
 
 
 /* Full Screen Name and Profession Section */
-#name, #profession {
+/* Hero Section - Name and Profession */
+.hero #name, #profession {
   font-family: "Rock Salt", cursive;
-  font-size: 10vw;  /* Smaller for larger screens */
+  font-size: 10vw;  /* Responsive font size */
   color: var(--text-color);
   text-align: center;
   margin: 0;
@@ -48,7 +46,14 @@ h1, h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.2;
+  z-index: 1;  /* Ensure it's on top of other content */
 }
+
+/* Initially Hide Other Sections */
+section:not(.hero) {
+  display: none; /* Hide other sections initially */
+}
+
 
 #profession {
   font-size: 5vw; /* Slightly smaller font size for profession */
