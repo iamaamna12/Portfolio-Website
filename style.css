@@ -90,7 +90,7 @@ h1, h2 {
   position: relative;
   opacity: 0;
   transform: translateY(-100px); /* Start off-screen */
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.5s ease, opacity 0.3s ease;
   cursor: pointer;
   padding: 20px;
   box-sizing: border-box;
