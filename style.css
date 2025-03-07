@@ -1,3 +1,13 @@
+@keyframes zoom {
+  from {
+    transform: scale(1); /* Initial size */
+  }
+  to {
+    transform: scale(1.2); /* Final size (zoomed in) */
+  }
+}
+
+
 html {
   box-sizing: border-box
 }
@@ -136,8 +146,8 @@ footer #copyright{
 }
 
 .carousel-nav button {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #fff;
+  background-color: rgb(255, 255, 255);
+  color: #817b7b;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -145,7 +155,8 @@ footer #copyright{
 }
 
 .carousel-nav button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  animation: zoom 0.6s ease-in-out; 
+  background-color: rgb(255, 255, 255);
 }
 
 
