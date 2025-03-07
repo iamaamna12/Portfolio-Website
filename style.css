@@ -22,8 +22,12 @@ body {
   margin: 0
 }
 
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section {
+article,aside,details,figcaption,figure,footer, header,main,menu,nav,section {
   display: block
+}
+
+footer #copyright{
+  font-size: 16px;
 }
 
 summary {
