@@ -26,12 +26,126 @@ article,aside,details,figcaption,figure,footer, header,main,menu,nav,section {
   display: block
 }
 
+
 footer #copyright{
   font-size: 16px;
 }
 
-footer{
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  margin: 20px 0;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-card cite {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial-card i {
+  color: #f1c40f;
+}
+
+.testimonial-card a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.testimonial-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 0 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  display: none;
+  opacity: 0;
+  transform: translateX(100px); 
+}
+
+.testimonial-card:first-child {
+  display: block; /* Show the first testimonial */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-card cite {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial-card i {
+  color: #f1c40f;
+}
+
+.testimonial-card a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(66, 149, 208);
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-nav button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.carousel-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 
