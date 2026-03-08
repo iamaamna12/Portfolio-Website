@@ -986,6 +986,48 @@
     });
   }, { threshold: 0.1 });
   revealEls.forEach(el => obs.observe(el));
+
+  // CONTACT FORM
+  document.getElementById('submit-btn').addEventListener('click', async () => {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const message = document.getElementById('f-msg').value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in all fields before sending.');
+      return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending...';
+    btn.style.opacity = '0.6';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '12d4bc6f-4a56-425f-85da-df0ab16d387a',
+          name, email, message,
+          subject: 'New message from aamnashahab.com'
+        })
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        document.getElementById('contact-fields').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      btn.textContent = 'Send Message →';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+      alert('Something went wrong: ' + err.message + '. Please try again.');
+    }
+  });
 </script>
 </body>
 </html>
