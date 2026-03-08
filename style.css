@@ -757,7 +757,7 @@ nav {
   padding: 18px 22px;
   border: 1px solid var(--border);
   background: var(--surface);
-  transition: all 0.3s;
+  transition: all 0.3s;  
   letter-spacing: 1px;
 }
 .contact-link:hover {
@@ -786,6 +786,7 @@ nav {
   font-size: 13px;
   color: var(--muted);
   letter-spacing: 2px;
+  gap: 5px;
   text-transform: uppercase;
 }
 .form-input,
