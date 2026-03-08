@@ -169,8 +169,7 @@ section { position: relative; z-index: 2; }
 /* ── Buttons ──────────────────────────────────────────────── */
 .btn-primary {
   font-family: var(--font-mono);
-  font-size: 13px;
-  margin-top: 10px;
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 14px 32px;
@@ -182,7 +181,6 @@ section { position: relative; z-index: 2; }
   transition: all 0.3s;
   text-decoration: none;
   display: inline-flex;
-  align-self: flex-start;
   align-items: center;
   font-weight: 600;
 }
@@ -893,9 +891,9 @@ footer {
     padding: 90px 32px 40px;
     border-bottom: 1px solid var(--border);
     z-index: 490;
-    animation: slideDown 0.3s ease both;
   }
   .nav-links.open { display: flex !important; }
+
   .nav-links li { border-bottom: 1px solid var(--border); }
   .nav-links li:last-child { border-bottom: none; }
 
