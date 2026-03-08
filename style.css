@@ -200,7 +200,7 @@ section { position: relative; z-index: 2; }
   color: var(--cyan);
   background: transparent;
   border: 1px solid var(--cyan);
-  cursor: none;
+  cursor: none; 
   transition: all 0.3s;
   text-decoration: none;
   display: inline-flex;
@@ -211,6 +211,7 @@ section { position: relative; z-index: 2; }
   background: var(--cyan-dim);
   box-shadow: 0 0 20px var(--cyan-glow);
 }
+
 
 /* ── Floating code labels ─────────────────────────────────── */
 .float-code {
@@ -820,6 +821,7 @@ nav {
   line-height: 1.7;
 }
 
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -846,26 +848,83 @@ footer {
 }
 
 /* ============================================================
+   HAMBURGER BUTTON (hidden on desktop)
+   ============================================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 600;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cyan);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+/* Animated X when open */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
-  nav                  { padding: 20px 24px; }
-  .nav-links           { gap: 20px; }
 
-  #home                { padding: 120px 24px 80px; }
-  .stats-bar           { display: none; }
+  /* Nav */
+  nav {
+    padding: 20px 24px;
+    position: fixed;
+  }
+  .hamburger { display: flex; }
 
-  #portfolio           { padding: 100px 24px; }
-  .projects-grid       { grid-template-columns: 1fr; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(3, 10, 18, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 90px 32px 40px;
+    border-bottom: 1px solid var(--border);
+    z-index: 490;
+  }
+  .nav-links.open { display: flex !important; }
+
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links li:last-child { border-bottom: none; }
+
+  .nav-links a {
+    display: block;
+    padding: 18px 0;
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  /* Sections */
+  #home                  { padding: 120px 24px 80px; }
+  .stats-bar             { display: none; }
+  .float-code            { display: none; }
+
+  #portfolio             { padding: 100px 24px; }
+  .projects-grid         { grid-template-columns: 1fr; }
   .project-card.featured { grid-column: span 1; }
 
-  #about               { padding: 100px 24px; grid-template-columns: 1fr; }
-  .about-visual        { height: 380px; }
+  #about                 { padding: 100px 24px; grid-template-columns: 1fr; }
+  .about-visual          { height: 380px; }
 
-  #testimonials-section { padding: 80px 24px; }
-  .testimonials-grid   { grid-template-columns: 1fr; }
+  #testimonials-section  { padding: 80px 24px; }
+  .testimonials-grid     { grid-template-columns: 1fr; }
 
-  #contact             { padding: 100px 24px; grid-template-columns: 1fr; }
+  #contact               { padding: 100px 24px; grid-template-columns: 1fr; }
 
-  footer               { padding: 30px 24px; flex-direction: column; gap: 16px; text-align: center; }
+  footer                 { padding: 30px 24px; flex-direction: column; gap: 16px; text-align: center; }
 }
