@@ -575,6 +575,37 @@
   }
 </style>
 </head>
+<script>
+  document.getElementById('submit-btn').addEventListener('click', async () => {
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const message = document.getElementById('f-msg').value.trim();
+    if (!name || !email || !message) return;
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending...';
+    btn.style.opacity = '0.6';
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '12d4bc6f-4a56-425f-85da-df0ab16d387a',
+        name, email, message
+      })
+    });
+
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('contact-fields').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Message →';
+      btn.style.opacity = '1';
+      alert('Something went wrong. Please try again.');
+    }
+  });
+</script>
 <body>
 
 <div class="cursor">
@@ -891,20 +922,30 @@
   </div>
 
   <div class="contact-form reveal">
+  <div id="success-msg" style="display:none; font-family:var(--font-mono); font-size:13px; color:var(--green); padding:20px; border:1px solid var(--green); background:var(--green-dim); letter-spacing:1px;">
+    ✓ MESSAGE SENT — I'll get back to you soon.
+  </div>
+
+  <div id="contact-fields">
+    <input type="hidden" name="access_key" value="12d4bc6f-4a56-425f-85da-df0ab16d387a">
+    <input type="hidden" name="subject" value="New message from aamnashahab.com">
+    <input type="hidden" name="redirect" value="false">
+
     <div class="form-group">
       <label class="form-label">Your Name</label>
-      <input type="text" class="form-input" placeholder="Name">
+      <input type="text" id="f-name" class="form-input" placeholder="John Doe" required>
     </div>
     <div class="form-group">
       <label class="form-label">Email Address</label>
-      <input type="email" class="form-input" placeholder="name@example.com">
+      <input type="email" id="f-email" class="form-input" placeholder="john@example.com" required>
     </div>
     <div class="form-group">
       <label class="form-label">Message</label>
-      <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+      <textarea id="f-msg" class="form-textarea" placeholder="Tell me about your project..."></textarea>
     </div>
-    <button class="btn-primary" style="align-self:flex-start;cursor:none">Send Message →</button>
+    <button id="submit-btn" class="btn-primary" style="align-self:flex-start;cursor:none">Send Message →</button>
   </div>
+</div>
 </section>
 
 <!-- FOOTER -->
