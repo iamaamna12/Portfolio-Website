@@ -786,7 +786,7 @@ nav {
   font-size: 13px;
   color: var(--muted);
   letter-spacing: 2px;
-  gap: 5px;
+  padding: 5px;
   text-transform: uppercase;
 }
 .form-input,
