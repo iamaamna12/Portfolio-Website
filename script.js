@@ -3,6 +3,23 @@
    script.js
    ============================================================ */
 
+/* ── Hamburger menu ───────────────────────────────────────── */
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
 /* ── Custom cursor ────────────────────────────────────────── */
 const dot  = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
@@ -49,7 +66,7 @@ const observer  = new IntersectionObserver(entries => {
 
 revealEls.forEach(el => observer.observe(el));
 
-/* ── Contact form — Web3Forms + reCAPTCHA ─────────────────── */
+/* ── Contact form — Web3Forms ─────────────────────────────── */
 const submitBtn = document.getElementById('submit-btn');
 
 submitBtn.addEventListener('click', async () => {
@@ -62,25 +79,25 @@ submitBtn.addEventListener('click', async () => {
     return;
   }
 
-  submitBtn.textContent   = 'Sending...';
+  submitBtn.textContent  = 'Sending...';
   submitBtn.style.opacity = '0.6';
   submitBtn.disabled      = true;
 
   try {
-    const token = await grecaptcha.execute('6LdLXoMsAAAAAB2uI-onnJFY3eMkkcWbwyhzqWN4', { action: 'contact' });
-
     const res = await fetch('https://api.web3forms.com/submit', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         access_key: '12d4bc6f-4a56-425f-85da-df0ab16d387a',
-        name, email, message,
-        subject: 'New message from aamnashahab.com',
-        'g-recaptcha-response': token
+        name,
+        email,
+        message,
+        subject: 'New message from aamnashahab.com'
       })
     });
 
     const data = await res.json();
+
     if (data.success) {
       document.getElementById('contact-fields').style.display = 'none';
       document.getElementById('success-msg').style.display    = 'block';

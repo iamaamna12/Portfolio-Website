@@ -10,8 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
-  <script src="https://www.google.com/recaptcha/api.js?render=6LdLXoMsAAAAAB2uI-onnJFY3eMkkcWbwyhzqWN4"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -27,13 +26,18 @@
   <!-- ── NAV ──────────────────────────────────────────────── -->
   <nav>
     <div class="nav-logo">@AAMNA<span>.DEV</span></div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#testimonials-section">Testimonials</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"                 class="nav-link">Home</a></li>
+      <li><a href="#portfolio"            class="nav-link">Portfolio</a></li>
+      <li><a href="#about"                class="nav-link">About</a></li>
+      <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+      <li><a href="#contact"              class="nav-link">Contact</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- ── HERO ─────────────────────────────────────────────── -->
@@ -324,7 +328,7 @@
           <span class="contact-link-icon">📷</span> @shutterbug_aamna (I do have my hobbies ;)
         </a>
         <a href="https://github.com/iamaamna12" target="_blank" class="contact-link">
-          <span class="contact-link-icon">🛠️</span> @iamaamna12
+          <span class="contact-link-icon">🐱</span> @iamaamna12
         </a>
         <a href="#" class="contact-link">
           <span class="contact-link-icon">📍</span> Wiesbaden, Germany
