@@ -914,3 +914,87 @@ footer {
 
   footer                 { padding: 30px 24px; flex-direction: column; gap: 16px; text-align: center; }
 }
+
+/* ============================================================
+   PUBLICATIONS & PATENTS
+   ============================================================ */
+#publications {
+  padding: 140px 60px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 50%, var(--bg) 100%);
+}
+ 
+.pub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 56px;
+}
+ 
+.pub-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+ 
+.pub-col-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pub-col-icon { font-size: 14px; }
+ 
+.pub-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--cyan);
+  padding: 24px 28px;
+  transition: all 0.3s;
+  position: relative;
+}
+.pub-card:hover {
+  border-color: var(--cyan);
+  transform: translateX(4px);
+  background: rgba(0, 200, 255, 0.03);
+}
+.pub-card.patent {
+  border-left-color: var(--green);
+}
+.pub-card.patent:hover { border-color: var(--green); }
+ 
+.pub-type {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.pub-card.patent .pub-type { color: var(--green); }
+ 
+.pub-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+ 
+.pub-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+ 
+@media (max-width: 900px) {
+  #publications { padding: 80px 24px; }
+  .pub-grid     { grid-template-columns: 1fr; gap: 32px; }
+}
