@@ -251,7 +251,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 26x;
+  gap: 40x;
   list-style: none;
 }
 .nav-links a {
