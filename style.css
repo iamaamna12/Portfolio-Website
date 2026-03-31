@@ -251,7 +251,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 40x;
+  gap: 46x;
   list-style: none;
 }
 .nav-links a {
@@ -874,7 +874,7 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 0;
+    gap: 40;
     position: fixed;
     top: 0; left: 0; right: 0;
     background: rgba(3, 10, 18, 0.98);
