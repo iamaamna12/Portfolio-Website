@@ -257,6 +257,7 @@ nav {
 .nav-links a {
   font-family: var(--font-mono);
   font-size: 12px;
+  gap: 40;
   color: var(--muted);
   text-decoration: none;
   letter-spacing: 2px;
