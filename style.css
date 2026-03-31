@@ -142,7 +142,7 @@ section { position: relative; z-index: 2; }
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 53px;
 }
 .section-tag {
   font-family: var(--font-mono);
@@ -251,13 +251,13 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 46x;
+  gap: 46px;
   list-style: none;
 }
 .nav-links a {
   font-family: var(--font-mono);
   font-size: 12px;
-  gap: 40;
+  gap: 40px;
   color: var(--muted);
   text-decoration: none;
   letter-spacing: 2px;
@@ -875,7 +875,7 @@ footer {
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 40;
+    gap: 40px;
     position: fixed;
     top: 0; left: 0; right: 0;
     background: rgba(3, 10, 18, 0.98);
